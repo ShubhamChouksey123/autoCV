@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -88,11 +88,51 @@
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
+\usepackage{fontawesome}
+
+%----------------------------------------------------------------------------------------
+%	 COLOURS
+%----------------------------------------------------------------------------------------
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+
+\definecolor{pblue}{HTML}{0395DE}
+
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{test}{HTML}{0077be}
+\definecolor{yt}{HTML}{c71610}
+
+
+
+
 
 %debug page outer frames
 %\usepackage{showframe}
@@ -142,41 +182,89 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Shubham Chouksey} \\[7.5pt]
+
+
+\href{https://github.com/ShubhamChouksey123}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faGithub}}} 
+\ GitHub} 
+\ $|$ \ 
+\href{https://www.linkedin.com/in/shubham-chouksey-971108156/}{\raisebox{-0.05\height} {\textnormal{\textcolor{linkedin}{\faLinkedin}}}   \ LinkedIn}  
+\ $|$ \ 
+\href{https://shubham-chouksey.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{test}{\faGlobe}}}       
+\ shubham-chouksey.com} 
+\ $|$ \ 
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{yt}{\faEnvelope}}}
+\ shubhamchouksey1998@gmail.com} 
+\\
+\href{tel:+000000000000}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faMobile}}} 
+\ +91 9479917417} 
 \end{tabularx}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Development &  \normalsize{Java, C++, C, JavaScript, Python, PHP, MySQL, MongoDB, Postgres, Amazon S3, Spring, Spring boot, JPA, JDBC, Hibernate, JUnit, Unit Testing, Mockito, jQuery, OOP,  Apache Kafka, Ethereum, Solidity, SQL, Git, AWS, Cloud Computing, Bootstrap, Node, Express}\\
+Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Backend}\\  
+\end{tabularx}
+
+
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Associate Team Lead} & \hfill June 2023 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
 
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Lead the design and implementation of send-money and add-money APIs that support multiple combinations of Bank/Card/Wallet/Cash/Open-transfer/Other type transaction
+    \end{itemize}
+\end{minipage}
+} 
+\end{tabularx}
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Back-end Developer} & \hfill June 2021 - May 2023 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Implemented enterprise application that facilitates users to register, log in, account recovery, update profiles, email, phone, and password using Java, Spring boot, and notification APIs.
+        \item Design and development of Issuer Server that performs automated user KYC based on document images uploaded by the user, extracts the data from the images, compares with the information submitted by the user, and assigns the user a tier, controlling his spending limits. 
+        \item Design and implementation of block-reader system that reads blocks mined on the blockchain, and performs database updates of every record/transaction in it.
+        \item Integrated multiple third-party services for notifications and storage including Twilio, SendGrid, Gmail SMTP, and Amazon S3
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS SECTIONS
+%----------------------------------------------------------------------------------------
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Quiz Website:} A website that provides users with random multiple choice questions from the database and evaluates the score compares with other users, classifies the performance as above average or not, and also updates the leaderboard consisting of top performers. HTML CSS JavaScript PHP PhpMyAdmin MySQL
+        \item \textbf{Clustering on Gene Expression Dataset:} Implementing K-Means, Hierarchical agglomeration, and DBSCAN ground clustering techniques from scratch on cancer gene expression dataset in Python
+        \item \textbf{Terrace Farming Robot:} Designed, Simulation, fabrication, and programmed bronze medal-winning Terrace Farming Robot robot that can ascend, descend stairs, and can perform farming operations in hilly areas.
+    \end{itemize}
+} 
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -184,32 +272,25 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+2017 - 2021 & B.Tech at \textbf{Indian Institute of Technology(IIT), Patna} \hfill \normalsize (GPA: 8.04/10.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+2016 & Class 12th Shri Krishna Public School, Indore \hfill  (81.8 \%) \\
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+2014 & Class 10th Gyan Ganga International School, Jabalpur \hfill  (9.6/10.0) \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
 %----------------------------------------------------------------------------------------
-%	SKILLS
+%	AWARDS AND ACHIEVEMENTS	
 %----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
+\section{Awards Achievements}
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Won Bronze Medal in DIC’s Terrace Farming Challenge for hilly areas
+        \item Secured 2nd position in Stage-1 and overall 16th in National Level Robocon contest and 99/100 in Stage-1 in Robocon 2020
+        \item  Ranked amongst top 0.68\% (amongst 1,400,000 candidates) in JEE Main 2017 and top 5.35 \%( amongst 2, 00,000 candidates) in JEE Advanced 2017
+    \end{itemize}
+\end{minipage}
 
 \vfill
 \center{\footnotesize Last updated: \today}
