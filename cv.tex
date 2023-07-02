@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -93,6 +93,45 @@
 
 %for social icons
 \usepackage{fontawesome5}
+\usepackage{fontawesome}
+
+%----------------------------------------------------------------------------------------
+%	 COLOURS
+%----------------------------------------------------------------------------------------
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+
+\definecolor{pblue}{HTML}{0395DE}
+
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{test}{HTML}{0077be}
+\definecolor{yt}{HTML}{c71610}
+
+
 
 %debug page outer frames
 %\usepackage{showframe}
@@ -118,25 +157,28 @@
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Shubham Chouksey} \\[7.5pt]
 
-\href{https://github.com/ShubhamChouksey123}{\raisebox{-0.05\height}\faGithub\ GitHub} 
+
+\href{https://github.com/ShubhamChouksey123}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faGithub}}} 
+\ GitHub} 
 \ $|$ \ 
-\href{https://www.linkedin.com/in/shubham-chouksey-971108156/}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} 
+\href{https://www.linkedin.com/in/shubham-chouksey-971108156/}{\raisebox{-0.05\height} {\textnormal{\textcolor{linkedin}{\faLinkedin}}}   \ LinkedIn}  
 \ $|$ \ 
-\href{https://shubham-chouksey.com}{\raisebox{-0.05\height}\faGlobe \ shubham-chouksey.com} 
+\href{https://shubham-chouksey.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{test}{\faGlobe}}}       
+\ shubham-chouksey.com} 
 \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ shubhamchouksey1998@gmail.com} 
-\ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +91 9479917417} 
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{yt}{\faEnvelope}}}
+\ shubhamchouksey1998@gmail.com} 
 \\
+\href{tel:+000000000000}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faMobile}}} 
+\ +91 9479917417} 
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-% SUMMARY SECTIONS
-%----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
@@ -146,6 +188,7 @@ This CV can also be automatically compiled and published using GitHub Actions. F
 Development &  \normalsize{Java, C++, C, JavaScript, Python, PHP, MySQL, MongoDB, Postgres, Amazon S3, Spring, Spring boot, JPA, JDBC, Hibernate, JUnit, Unit Testing, Mockito, jQuery, OOP,  Apache Kafka, Ethereum, Solidity, SQL, Git, AWS, Cloud Computing, Bootstrap, Node, Express}\\
 Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Backend}\\  
 \end{tabularx}
+
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
@@ -157,8 +200,13 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Associate Team Lead} & \hfill June 2023 - present \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
-Lead the design and implementation of send-money and add-money APIs that support multiple combinations of Bank/Card/Wallet/Cash/Open-transfer/Other type transaction
-}  \\
+
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Lead the design and implementation of send-money and add-money APIs that support multiple combinations of Bank/Card/Wallet/Cash/Open-transfer/Other type transaction
+    \end{itemize}
+\end{minipage}
+} 
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
@@ -166,12 +214,12 @@ Lead the design and implementation of send-money and add-money APIs that support
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] Implemented enterprise application that facilitates users to register, log in, account recovery, update profiles, email, phone, and password using Java, Spring boot, and notification APIs.
-        \item[--] Design and development of Issuer Server that performs automated user KYC based on document images uploaded by the user, extracts the data from the images, compares with the information submitted by the user, and assigns the user a tier, controlling his spending limits. 
-        \item[--] Design and implementation of block-reader system that reads blocks mined on the blockchain, and performs database updates of every record/transaction in it.
-        \item[--] Integrated multiple third-party services for notifications and storage including Twilio, SendGrid, Gmail SMTP, and Amazon S3
+        \item Implemented enterprise application that facilitates users to register, log in, account recovery, update profiles, email, phone, and password using Java, Spring boot, and notification APIs.
+        \item Design and development of Issuer Server that performs automated user KYC based on document images uploaded by the user, extracts the data from the images, compares with the information submitted by the user, and assigns the user a tier, controlling his spending limits. 
+        \item Design and implementation of block-reader system that reads blocks mined on the blockchain, and performs database updates of every record/transaction in it.
+        \item Integrated multiple third-party services for notifications and storage including Twilio, SendGrid, Gmail SMTP, and Amazon S3
     \end{itemize}
-    \end{minipage}
+\end{minipage}
 }
 \end{tabularx}
 
@@ -182,21 +230,13 @@ Lead the design and implementation of send-money and add-money APIs that support
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-
-\textbf{Quiz Website} & \hfill \href{https://github.com/ShubhamChouksey123/Quiz-Website }{Link to Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
-A website that provides users with random multiple choice questions from the database and evaluates the score compares with other users, classifies the performance as above average or not, and also updates the leaderboard consisting of top performers. HTML CSS JavaScript PHP PhpMyAdmin MySQL
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Quiz Website:} A website that provides users with random multiple choice questions from the database and evaluates the score compares with other users, classifies the performance as above average or not, and also updates the leaderboard consisting of top performers. HTML CSS JavaScript PHP PhpMyAdmin MySQL
+        \item \textbf{Clustering on Gene Expression Dataset:} Implementing K-Means, Hierarchical agglomeration, and DBSCAN ground clustering techniques from scratch on cancer gene expression dataset in Python
+        \item \textbf{Terrace Farming Robot:} Designed, Simulation, fabrication, and programmed bronze medal-winning Terrace Farming Robot robot that can ascend, descend stairs, and can perform farming operations in hilly areas.
+    \end{itemize}
 } 
-\\
-\textbf{Clustering on Gene Expression Dataset} & \hfill \href{https://github.com/ShubhamChouksey123/Hierarchical-Agglomerative-Clustering}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-Implementing K-Means, Hierarchical agglomeration, and DBSCAN ground clustering techniques from scratch on cancer gene expression dataset in Python
-}
-\\
-\textbf{Terrace Farming Robot} & \hfill \href{https://github.com/ShubhamChouksey123/Terrace-Farming-Robot}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-Designed, Simulation, fabrication, and programmed bronze medal-winning Terrace Farming Robot robot that can ascend, descend stairs, and can perform farming operations in hilly areas.
-}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -206,10 +246,23 @@ Designed, Simulation, fabrication, and programmed bronze medal-winning Terrace F
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
 2017 - 2021 & B.Tech at \textbf{Indian Institute of Technology(IIT), Patna} \hfill \normalsize (GPA: 8.04/10.0) \\
 
-2016 & Class 12th Shri Krishna Public School, Indore \hfill  (81.8) \\
+2016 & Class 12th Shri Krishna Public School, Indore \hfill  (81.8 \%) \\
 
 2014 & Class 10th Gyan Ganga International School, Jabalpur \hfill  (9.6/10.0) \\
 \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS AND ACHIEVEMENTS	
+%----------------------------------------------------------------------------------------
+\section{Awards Achievements}
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Won Bronze Medal in DIC’s Terrace Farming Challenge for hilly areas
+        \item Secured 2nd position in Stage-1 and overall 16th in National Level Robocon contest and 99/100 in Stage-1 in Robocon 2020
+        \item  Ranked amongst top 0.68\% (amongst 1,400,000 candidates) in JEE Main 2017 and top 5.35 \%( amongst 2, 00,000 candidates) in JEE Advanced 2017
+    \end{itemize}
+\end{minipage}
+
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
