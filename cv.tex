@@ -67,7 +67,6 @@
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
 
@@ -84,7 +83,7 @@
 
 
 \newcommand{\customHeading}[1]{
-    \section{#1 \hrulefill}
+    \section{\texorpdfstring{#1 \hrulefill}{}}
 }
 
 
