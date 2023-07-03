@@ -78,8 +78,15 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\Large\scshape\sffamily\bfseries\color{pblue}\raggedright}
+{}{0em}{}[]
 \titlespacing{\section}{0pt}{10pt}{10pt}
+
+
+\newcommand{\customHeading}[1]{
+    \section{#1 \hrulefill}
+}
+
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -133,6 +140,8 @@
 
 
 
+
+
 %debug page outer frames
 %\usepackage{showframe}
 
@@ -183,7 +192,8 @@
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-\section{Skills}
+% \section{Skills}
+\customHeading{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
 Development &  \normalsize{Java, C++, C, JavaScript, Python, PHP, MySQL, MongoDB, Postgres, Amazon S3, Spring, Spring boot, JPA, JDBC, Hibernate, JUnit, Unit Testing, Mockito, jQuery, OOP,  Apache Kafka, Ethereum, Solidity, SQL, Git, AWS, Cloud Computing, Bootstrap, Node, Express}\\
 Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Backend}\\  
@@ -195,7 +205,8 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 %----------------------------------------------------------------------------------------
 
 %Experience
-\section{Work Experience}
+% \section{Work Experience}
+\customHeading{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Associate Team Lead} & \hfill June 2023 - present \\[3.75pt]
@@ -227,7 +238,8 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 % PROJECTS SECTIONS
 %----------------------------------------------------------------------------------------
 %Projects
-\section{Projects}
+% \section{Projects}
+\customHeading{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
@@ -242,7 +254,8 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-\section{Education}
+% \section{Education}
+\customHeading{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
 2017 - 2021 & B.Tech at \textbf{Indian Institute of Technology(IIT), Patna} \hfill \normalsize (GPA: 8.04/10.0) \\
 
@@ -254,7 +267,8 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 %----------------------------------------------------------------------------------------
 %	AWARDS AND ACHIEVEMENTS	
 %----------------------------------------------------------------------------------------
-\section{Awards Achievements}
+% \section{Awards Achievements}
+\customHeading{Awards \& Achievements}
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
         \item Won Bronze Medal in DIC’s Terrace Farming Challenge for hilly areas
