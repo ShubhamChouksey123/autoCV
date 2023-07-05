@@ -86,6 +86,16 @@
     \section{\texorpdfstring{#1 \hrulefill}{}}
 }
 
+\newcommand{\customSubHeading}[4]{
+    \begin{tabularx}{1.0\textwidth} {
+           >{\raggedright\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X  }
+          \textbf{#1} &\textbf{#2} & \textbf{#3} & #4 \\[3.75pt]
+    \end{tabularx}
+}
+
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -214,6 +224,10 @@
 
 
 
+
+
+
+
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
@@ -231,12 +245,14 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 
 %Experience
 % \section{Work Experience}
+
+
 \customHeading{Work Experience}
-
+\customSubHeading{Associate Team Lead}
+{\href{https://www.cognam.com/}{\raisebox{-0.05\height}\ Cognam} }
+{Delhi, India}{June 2023 - present} 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Associate Team Lead} & \hfill June 2023 - present \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
-
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
         \item Lead the design and implementation of send-money and add-money APIs that support multiple combinations of Bank/Card/Wallet/Cash/Open-transfer/Other type transaction
@@ -245,8 +261,11 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 } 
 \end{tabularx}
 
+
+\customSubHeading{Back-end Developer}
+{\href{https://www.cognam.com/}{\raisebox{-0.05\height}\ Cognam} }
+{Delhi, India}{June 2021 - May 2023}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Back-end Developer} & \hfill June 2021 - May 2023 \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
@@ -258,6 +277,7 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 \end{minipage}
 }
 \end{tabularx}
+
 
 %----------------------------------------------------------------------------------------
 % PROJECTS SECTIONS
