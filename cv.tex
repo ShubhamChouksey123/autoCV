@@ -104,7 +104,6 @@
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
 
 %for social icons
@@ -270,7 +269,7 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
         \item Implemented enterprise application that facilitates users to register, log in, account recovery, update profiles, email, phone, and password using Java, Spring boot, and notification APIs.
-        \item Created the Issuer Server, automating KYC by analyzing user-uploaded document images, extracting data, comparing it with user-submitted information, and assigning spending limit tiers, in Spring boot. 
+        \item Design and development of Issuer Server that performs automated user KYC based on document images uploaded by the user, extracts the data from the images, compares with the information submitted by the user, and assigns the user a tier, controlling his spending limits. 
         \item Design and implementation of block-reader system that reads blocks mined on the blockchain, and performs database updates of every record/transaction in it.
         \item Integrated multiple third-party services for notifications and storage including Twilio, SendGrid, Gmail SMTP, and Amazon S3
     \end{itemize}
@@ -288,16 +287,7 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item \textbf{Quiz Website:} A website that provides users with random multiple choice questions and evaluates the score, compares with other users, classifies the performance as above average or not, and also updates the leaderboard consisting of top performers. HTML CSS JavaScript PHP PhpMyAdmin MySQL
-        \href{https://www.linkedin.com/in/shubham-chouksey-971108156/}{\raisebox
-            {\textnormal
-                {\textcolor{linkedin}
-                    % {\faLinkedin}
-                }
-            }   
-            \ Link to Website
-        }
-        
+        \item \textbf{Quiz Website:} A website that provides users with random multiple choice questions from the database and evaluates the score compares with other users, classifies the performance as above average or not, and also updates the leaderboard consisting of top performers. HTML CSS JavaScript PHP PhpMyAdmin MySQL
         \item \textbf{Clustering on Gene Expression Dataset:} Implementing K-Means, Hierarchical agglomeration, and DBSCAN ground clustering techniques from scratch on cancer gene expression dataset in Python
         \item \textbf{Terrace Farming Robot:} Designed, Simulation, fabrication, and programmed bronze medal-winning Terrace Farming Robot robot that can ascend, descend stairs, and can perform farming operations in hilly areas.
     \end{itemize}
@@ -331,19 +321,10 @@ Some More Skills  &  \normalsize{Microservies, Distributed Systems, Frontend, Ba
 \end{minipage}
 
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%  lets remove it later
-%----------------------------------------------------------------------------------------
-% \section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-% \printbibliography[heading=none]
-\end{refsection}
 
 
 
 \vfill
-\center{\footnotesize Last updated: \today}
+\center{\footnotesize Last updated: 1 \today}
 
 \end{document}
