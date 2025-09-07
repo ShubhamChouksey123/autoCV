@@ -1,0 +1,349 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+% \documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{datetime} % Required for \formatdate
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\sffamily\bfseries\color{pblue}\raggedright}
+{}{0em}{}[]
+\titlespacing{\section}{0pt}{10pt}{2pt}
+% \titlespacing{\section}{1pt}{\parskip}{1pt}
+
+
+\newcommand{\customHeading}[1]{
+    \section{\texorpdfstring{#1 \hrulefill}{}}
+}
+
+\newcommand{\customSubHeading}[4]{
+    \begin{tabularx}{1.0\textwidth} {
+           >{\raggedright\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X  }
+          \textbf{#1} &\textbf{#2} & \textbf{#3} & #4 \\[2.0pt]
+    \end{tabularx}
+}
+
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\setlength\bibitemsep{1em}
+
+%for social icons
+% \usepackage{fontawesome5}
+\usepackage{fontawesome}
+
+%----------------------------------------------------------------------------------------
+%	 COLOURS
+%----------------------------------------------------------------------------------------
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+
+\definecolor{pblue}{HTML}{0395DE}
+
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{test}{HTML}{0077be}
+\definecolor{yt}{HTML}{c71610}
+
+
+
+
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Shubham Chouksey} \\[7.5pt]
+
+
+\href{https://github.com/ShubhamChouksey123}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faGithub}}} 
+\ GitHub} 
+\ $|$ \ 
+\href{https://www.linkedin.com/in/contact-shubham-chouksey/}{\raisebox{-0.05\height} {\textnormal{\textcolor{linkedin}{\faLinkedin}}}   \ LinkedIn}  
+\ $|$ \ 
+\href{https://shubhamchouksey123.github.io/portfolio/}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{test}{\faGlobe}}}       
+\ shubham-chouksey.com} 
+\ $|$ \ 
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{yt}{\faEnvelope}}}
+\ shubhamchouksey1998@gmail.com} 
+\\
+\href{tel:+000000000000}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faMobile}}} 
+\ +91 9479917417} 
+\end{tabularx}
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+% \section{Work Experience}
+
+
+\customHeading{Work Experience}
+
+\customSubHeading{Software Engineer 2}
+{\href{https://www.newrelic.com/}{\raisebox{-0.05\height}\ New Relic} }
+{Hyderabad, India}{August 2024 - present} 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Led the full-stack development of the Signing and Verification API, building secure endpoints for key management and validation.
+        \item Designed and implemented a new organization-scoped secrets capability and enhanced GraphQL and REST APIs.
+        \item Automated the migration of New Relic alerts to a new policy using Terraform and implemented robust infrastructure with AWS (S3, KMS) and Cloudflare.
+    \end{itemize}
+\end{minipage}
+} 
+\end{tabularx}
+
+
+\customSubHeading{Associate Team Lead}
+{\href{https://www.cognam.com/}{\raisebox{-0.05\height}\ Cognam} }
+{Delhi, India}{June 2023 - present} 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Led the design and development of the backend system for a blockchain app of Mexico's leading International payment processor, operating in 80 countries, driving monthly revenue of \$1 billion, using Java and Spring boot.
+        \item Led a 6-member back-end team, overseeing Sprint presentations, task allocation, deadline compliance in an agile and scrum setting, multi-tasking software development, and managing multiple stakeholders.
+        \item Maintained a monolithic repository, ensuring clean code through repository management, code reviews, and adherence to design principles.
+        Collaboration with front-end developers and ensuring seamless API integration.
+        \item Managed technical design, and documentation, crafted Jira user stories, streamlining development. Provided client consultation, optimizing deployment for accelerated timelines and enhanced satisfaction via software solutions.
+        \item Java, Spring boot, SQL, Scrum, Hibernate, Apacche Kafka, JPA, Hibernate, Git, Agile, Debugging, RESTful API
+    \end{itemize}
+\end{minipage}
+} 
+\end{tabularx}
+
+
+\customSubHeading{Software Engineer}
+{\href{https://www.cognam.com/}{\raisebox{-0.05\height}\ Cognam} }
+{Delhi, India}{June 2021 - May 2023}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Delivered 30+ scalable APIs for new enterprise mobile applications of bank's finance system, including user registration, login, profile updates, various send money, and notifications improving the user's experience.
+        \item Designed and implemented a block-reader system that syncs database with blockchain up to 100,000 transactions per second, providing decentralized capabilities to traditional banking systems.
+        \item Integrated multiple third-party systems with the product, including Twilio, SendGrid, Gmail SMTP, and S3.
+        \item Transformed the Issuer Server with machine learning, ML-powered automated user KYC, cutting manual work by 95\%, and boosting operational efficiency. 
+        \item Java, Spring, MVC, Maven, REST, MySQL, JDBC, AWS, Cloud, Mockito, testing, Test Driven Development, front-end
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+% \section{Skills}
+\customHeading{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages &  \normalsize{Java, C/C++, JavaScript, Python, SQL, Solidity}\\
+
+Frameworks  &  \normalsize{Spring, J2EE, Spring boot, Hibernate, JUnit, Unit Testing, jQuery, ReactJs, JPA}\\ 
+
+Technologies \& Tools  &  \normalsize{MySQL, MongoDB, Postgres, S3, Kafka, Bootstrap,
+Git, Amazon web services(AWS), Docker, Selenium, TDD,  Web Development, Linux, API Development, IntelliJ, NoSQL, Postman}\\  
+
+Some More Skills  &  \normalsize{GCP, Microservices, Backend, Full-stack, Design patterns, Architecture, problem solving, CI/CD, Continuous Integration, Software Engineer, Bash, Distributed Systems, Software Developer}\\  
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+% PROJECTS SECTIONS
+%----------------------------------------------------------------------------------------
+%Projects
+% \section{Projects}
+\customHeading{Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Quiz Application:} Creator of a responsive quiz, daily facts, and news application showcasing frontend and backend proficiency with Java, Spring boot, JavaScript, PostgreSQL for database management, and Gmail SMTP for seamless communication.
+        Java, HTML, CSS, JS, React.js, PostgreSQL, Shell Script, HTML5, AWS, Docker
+        \hfill 
+        \href{https://quiz-website-g8d7.onrender.com/}{Link to Website}
+        \item \textbf{Clustering on Gene Expression Dataset:} Engineered 4 different clustering techniques from scratch on cancer gene expression dataset in Python. 
+        \hfill 
+        \href{https://github.com/ShubhamChouksey123/Hierarchical-Agglomerative-Clustering}{Link to GitHub }
+        \item \textbf{Terrace Farming Robot:} Designed, Analysis, Simulation, fabrication, and programmed a bronze medal-winning robot that can ascend, and descend stairs, and perform farming operations in hilly areas.
+        \hfill 
+        \href{https://github.com/ShubhamChouksey123/Terrace-Farming-Robot}{Link to GitHub}
+    \end{itemize}
+} 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+% \section{Education}
+\customHeading{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2017 - 2021 & B.Tech at \textbf{Indian Institute of Technology(IIT), Patna} \hfill \normalsize (GPA: 8.04/10.0) \\
+
+Relevant Coursework: & Computer science, Databases, Data Structures, ML, Algorithms, operating systems, Object Oriented Programming(OOP)
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS AND ACHIEVEMENTS	
+%----------------------------------------------------------------------------------------
+% \section{Awards Achievements}
+\customHeading{Awards \& Achievements}
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Won Bronze Medal amongst 23 IITs in DIC’s Terrace Farming Challenge for hilly areas in Inter IIT Tech Meet.
+        \item Secured 2nd position in Stage-1 and overall 16th in National Level Robocon contest and 99/100 in Stage-1 in Robocon.
+        \item  Ranked amongst the top 0.68\% (amongst 1,400,000 candidates) in JEE Main 2017 and top 5.35\% (amongst 2,00,000 candidates) in JEE Advanced 2017.
+        \item  Open source contribution in web3j library for Java
+    \end{itemize}
+\end{minipage}
+
+
+
+
+
+\vfill
+% \center{\footnotesize Last updated: \today}
+
+\end{document}
