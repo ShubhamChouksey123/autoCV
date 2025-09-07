@@ -11,7 +11,9 @@ The template is designed to be clean with sections for
 
 ## Quickstart
 - Fork this repo (you can use the `Use this template` button)
+- Give the workflow write permissions for your forked repo (Settings -> Actions -> General)
 - Modify the `cv.tex` file and push changes to your repo
+- Set GitHub pages source to build branch (Settings -> Pages)
 - The complied PDF will be available under the `build` branch
 
 You can get a direct link to the generated PDF which you can use on your website, LinkedIn etc. that will always point to the latest version of your CV. Once your site is published, your CV will be accessible at: `https://username.github.io/repo-name/`
@@ -48,4 +50,5 @@ PS: If you liked the template, do star :star: it! Thanks!
 
 - [gradfolio](https://github.com/jitinnair1/gradfolio) - a minimal, quick-setup template for a personal website/portfolio
 - [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
+- [snippet-book](https://github.com/jitinnair1/snippet-book) -terminal style, clean Jekyll blog theme with catppuccin colours
 
