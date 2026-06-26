@@ -1,0 +1,274 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+% \documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{datetime} % Required for \formatdate
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\sffamily\bfseries\color{pblue}\raggedright}
+{}{0em}{}[]
+\titlespacing{\section}{0pt}{10pt}{2pt}
+% \titlespacing{\section}{1pt}{\parskip}{1pt}
+
+
+\newcommand{\customHeading}[1]{
+    \section{\texorpdfstring{#1 \hrulefill}{}}
+}
+
+\newcommand{\customSubHeading}[4]{
+    \begin{tabularx}{1.0\textwidth} {
+           >{\raggedright\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X
+           >{\raggedleft\arraybackslash}X  }
+          \textbf{#1} &\textbf{#2} & \textbf{#3} & #4 \\[2.0pt]
+    \end{tabularx}
+}
+
+
+%for publications (unused in this CV; left commented to avoid the biblatex/biber dependency)
+% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+% \setlength\bibitemsep{1em}
+
+%for social icons
+% \usepackage{fontawesome5}
+\usepackage{fontawesome}
+
+%----------------------------------------------------------------------------------------
+%	 COLOURS
+%----------------------------------------------------------------------------------------
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+
+\definecolor{pblue}{HTML}{0395DE}
+
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{test}{HTML}{0077be}
+\definecolor{yt}{HTML}{c71610}
+
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Nikhlesh Kumar Sahu, MPT} \\[7.5pt]
+
+
+\href{mailto:nikhlesh.physio@gmail.com}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{yt}{\faEnvelope}}}
+\ nikhlesh.physio@gmail.com}
+\ $|$ \
+\href{tel:+919589457841}{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faMobile}}}
+\ +91 95894 57841}
+\\[3.0pt]
+{\raisebox{-0.05\height}
+{\textnormal{\textcolor{gray}{\faMapMarker}}}
+\ Salichauka Road, Tehsil Gadarwara, District Narsinghpur, Madhya Pradesh -- 487881}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+% PROFESSIONAL SUMMARY
+%----------------------------------------------------------------------------------------
+
+\customHeading{Professional Summary}
+\begin{tabularx}{\linewidth}{ @{}X@{} }
+Dedicated and compassionate Physiotherapist with over 7 years of clinical experience in patient rehabilitation, musculoskeletal care, and community-based rehabilitation programs. Experienced in government healthcare settings and NGO services for physically challenged children. Skilled in Dry Needling and Cupping Therapy.
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+\customHeading{Professional Experience}
+\customSubHeading{Physiotherapist}
+{Government District Hospital}
+{Narsinghpur, Madhya Pradesh}{$\sim$4 years}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Delivered physiotherapy care in a government district hospital, managing musculoskeletal, orthopedic, and neurological rehabilitation cases across outpatient and inpatient settings.
+        \item Designed and supervised individualised exercise prescription and manual therapy programs to restore mobility and reduce pain.
+        \item Applied Dry Needling and Cupping Therapy as part of evidence-based pain management for chronic and acute conditions.
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+
+\customSubHeading{Rehabilitation Physiotherapist}
+{NGO -- Physically Challenged Children}
+{Madhya Pradesh}{1 year}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Provided pediatric rehabilitation and community-based physiotherapy services for physically challenged children.
+        \item Worked alongside caregivers and community health teams to plan and deliver functional rehabilitation goals.
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	CLINICAL SKILLS
+%----------------------------------------------------------------------------------------
+\customHeading{Clinical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Rehabilitation  &  \normalsize{Musculoskeletal Rehabilitation, Orthopedic Physiotherapy, Neurological Rehabilitation, Pediatric Rehabilitation}\\
+
+Therapy \& Techniques  &  \normalsize{Exercise Prescription, Manual Therapy, Dry Needling, Cupping Therapy, Pain Management}\\
+
+Settings  &  \normalsize{Government Healthcare, Community-Based Rehabilitation, NGO Services}\\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\customHeading{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2019 & Master of Physiotherapy (MPT) at \textbf{MPMSU, Jabalpur} \hfill \normalsize (67\%) \\[3.0pt]
+
+2013 & Bachelor of Physiotherapy (BPT) at \textbf{BU, Bhopal} \hfill \normalsize (69\%) \\[3.0pt]
+
+2008 & Higher Secondary (12th), \textbf{MP Board} \hfill \normalsize (83\%) \\[3.0pt]
+
+2006 & High School (10th), \textbf{MP Board} \hfill \normalsize (81\%) \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES & INTERESTS
+%----------------------------------------------------------------------------------------
+\customHeading{Languages \& Interests}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages &  \normalsize{Hindi, English}\\
+
+Hobbies \& Interests  &  \normalsize{Listening to Music, Walking, Yoga}\\
+\end{tabularx}
+
+
+\vfill
+% \center{\footnotesize Last updated: \today}
+
+\end{document}

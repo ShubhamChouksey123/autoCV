@@ -1,0 +1,20 @@
+# LaTeX build intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*~
+
+# Compiled CV output (built from .tex via latexmk / CI; not committed to main)
+/cv.pdf
+/nikhlesh_cv.pdf
+
+# macOS
+.DS_Store
