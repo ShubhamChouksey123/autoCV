@@ -50,12 +50,13 @@
 %----------------------------------------------------------------------------------------
 \usepackage{url}
 \usepackage{parskip}
+\setlength{\parskip}{2pt}
 
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=0.92]{geometry}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -81,7 +82,7 @@
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\sffamily\bfseries\color{pblue}\raggedright}
 {}{0em}{}[]
-\titlespacing{\section}{0pt}{10pt}{2pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 % \titlespacing{\section}{1pt}{\parskip}{1pt}
 
 
@@ -89,13 +90,12 @@
     \section{\texorpdfstring{#1 \hrulefill}{}}
 }
 
+% #1 = job title, #2 = organisation, #3 = location, #4 = dates
 \newcommand{\customSubHeading}[4]{
-    \begin{tabularx}{1.0\textwidth} {
-           >{\raggedright\arraybackslash}X
-           >{\raggedleft\arraybackslash}X
-           >{\raggedleft\arraybackslash}X
-           >{\raggedleft\arraybackslash}X  }
-          \textbf{#1} &\textbf{#2} & \textbf{#3} & #4 \\[2.0pt]
+    \begin{tabularx}{1.0\textwidth}{
+           @{} >{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}X @{} }
+          \textbf{#1} & \textbf{#4} \\[1.0pt]
+          \textit{#2} & \textit{#3} \\[2.0pt]
     \end{tabularx}
 }
 
@@ -166,7 +166,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Nikhlesh Kumar Sahu, MPT} \\[7.5pt]
+\Huge{Nikhlesh Kumar Sahu, MPT (Orthopaedics)} \\[7.5pt]
 
 
 \href{mailto:nikhlesh.physio@gmail.com}{\raisebox{-0.05\height}
@@ -179,7 +179,7 @@
 \\[3.0pt]
 {\raisebox{-0.05\height}
 {\textnormal{\textcolor{gray}{\faMapMarker}}}
-\ Salichauka Road, Tehsil Gadarwara, District Narsinghpur, Madhya Pradesh -- 487881}
+\ Gadarwara, District Narsinghpur, Madhya Pradesh -- 487551}
 \end{tabularx}
 
 
@@ -189,7 +189,7 @@
 
 \customHeading{Professional Summary}
 \begin{tabularx}{\linewidth}{ @{}X@{} }
-Dedicated and compassionate Physiotherapist with over 7 years of clinical experience in patient rehabilitation, musculoskeletal care, and community-based rehabilitation programs. Experienced in government healthcare settings and NGO services for physically challenged children. Skilled in Dry Needling and Cupping Therapy.
+Dedicated and compassionate Orthopaedic Physiotherapist (MPT) with over 12 years of clinical experience in patient rehabilitation, musculoskeletal care, and community-based rehabilitation programs. Adept at managing high-volume outpatient caseloads across government healthcare, private practice, and NGO settings. Skilled in manual therapy, electrotherapy, Dry Needling, and Cupping Therapy.
 \end{tabularx}
 
 
@@ -200,14 +200,30 @@ Dedicated and compassionate Physiotherapist with over 7 years of clinical experi
 \customHeading{Professional Experience}
 \customSubHeading{Physiotherapist}
 {Government District Hospital}
-{Narsinghpur, Madhya Pradesh}{$\sim$4 years}
+{Narsinghpur, Madhya Pradesh}{June 2022 -- Present}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Delivered physiotherapy care in a government district hospital, managing musculoskeletal, orthopedic, and neurological rehabilitation cases across outpatient and inpatient settings.
-        \item Designed and supervised individualised exercise prescription and manual therapy programs to restore mobility and reduce pain.
-        \item Applied Dry Needling and Cupping Therapy as part of evidence-based pain management for chronic and acute conditions.
+        \item Managed an average daily caseload of 30--40 outpatient and inpatient cases across musculoskeletal, orthopedic, neurological, and post-operative rehabilitation.
+        \item Conducted postural, gait, and functional assessments and designed individualised treatment plans with measurable recovery goals.
+        \item Delivered exercise prescription, manual therapy, and electrotherapy modalities (TENS, IFT, ultrasound, traction) to restore mobility and reduce pain.
+        \item Applied Dry Needling and Cupping Therapy for evidence-based pain management, and educated patients on home-exercise and injury-prevention programs.
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+
+\customSubHeading{Consultant Physiotherapist}
+{Private Clinical Practice}
+{Gadarwara, Madhya Pradesh}{2014 -- Present}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Established and run an independent physiotherapy practice, providing outpatient musculoskeletal, orthopedic, and pain-management care to the local community.
+        \item Deliver end-to-end patient care -- assessment, treatment planning, manual therapy, Dry Needling, and Cupping Therapy -- building lasting patient relationships through individualised follow-up and preventive care.
     \end{itemize}
 \end{minipage}
 }
@@ -234,11 +250,39 @@ Dedicated and compassionate Physiotherapist with over 7 years of clinical experi
 %----------------------------------------------------------------------------------------
 \customHeading{Clinical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Rehabilitation  &  \normalsize{Musculoskeletal Rehabilitation, Orthopedic Physiotherapy, Neurological Rehabilitation, Pediatric Rehabilitation}\\
+Rehabilitation  &  \normalsize{Musculoskeletal Rehabilitation, Orthopedic Physiotherapy, Neurological Rehabilitation, Pediatric Rehabilitation, Post-operative Rehabilitation}\\
 
 Therapy \& Techniques  &  \normalsize{Exercise Prescription, Manual Therapy, Dry Needling, Cupping Therapy, Pain Management}\\
 
-Settings  &  \normalsize{Government Healthcare, Community-Based Rehabilitation, NGO Services}\\
+Electrotherapy \& Modalities  &  \normalsize{TENS, IFT, Therapeutic Ultrasound, Traction, Wax Therapy, Hot \& Cold Therapy}\\
+
+Assessment  &  \normalsize{Postural Assessment, Gait Analysis, Functional \& Ergonomic Evaluation, Goniometry}\\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	CERTIFICATIONS & TRAINING
+%----------------------------------------------------------------------------------------
+\customHeading{Certifications \& Training}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2024 & Capacity Building Programme for Physiotherapists -- NHM Madhya Pradesh, \textbf{BMHRC Bhopal} \\[1.5pt]
+
+2023 & Orientation cum Training Program (NPHCE) -- \textbf{NHM Madhya Pradesh}, Bhopal \\[1.5pt]
+
+2022 & District-Level Orientation, \textbf{RBSK} Comprehensive Newborn Screening -- District Health Society, Narsinghpur \\[1.5pt]
+
+2016 & Hands-on Workshop on \textbf{Dry Needling} (16 hours) -- PhysioLife, Jabalpur \\[1.5pt]
+
+2012 & \textbf{Stroke Rehabilitation} Workshop -- 13th MP Neurocon (NSI Chapter), Bhopal \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	LICENSES & PROFESSIONAL AFFILIATIONS
+%----------------------------------------------------------------------------------------
+\customHeading{Registration}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+Registration &  \normalsize{Registered Physiotherapist, \textbf{Madhya Pradesh Paramedical Council}, Bhopal -- Reg.~No.~\mbox{SCH-01/PG2/48377/2022}}\\
 \end{tabularx}
 
 
@@ -247,11 +291,11 @@ Settings  &  \normalsize{Government Healthcare, Community-Based Rehabilitation, 
 %----------------------------------------------------------------------------------------
 \customHeading{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-2019 & Master of Physiotherapy (MPT) at \textbf{MPMSU, Jabalpur} \hfill \normalsize (67\%) \\[3.0pt]
+2019 & Master of Physiotherapy (MPT) at \textbf{MPMSU, Jabalpur} \hfill \normalsize (67\%) \\[1.5pt]
 
-2013 & Bachelor of Physiotherapy (BPT) at \textbf{BU, Bhopal} \hfill \normalsize (69\%) \\[3.0pt]
+2013 & Bachelor of Physiotherapy (BPT) at \textbf{BU, Bhopal} \hfill \normalsize (69\%) \\[1.5pt]
 
-2008 & Higher Secondary (12th), \textbf{MP Board} \hfill \normalsize (83\%) \\[3.0pt]
+2008 & Higher Secondary (12th), \textbf{MP Board} \hfill \normalsize (83\%) \\[1.5pt]
 
 2006 & High School (10th), \textbf{MP Board} \hfill \normalsize (81\%) \\
 \end{tabularx}
@@ -262,9 +306,7 @@ Settings  &  \normalsize{Government Healthcare, Community-Based Rehabilitation, 
 %----------------------------------------------------------------------------------------
 \customHeading{Languages \& Interests}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Languages &  \normalsize{Hindi, English}\\
-
-Hobbies \& Interests  &  \normalsize{Listening to Music, Walking, Yoga}\\
+Languages &  \normalsize{Hindi, English \quad $|$ \quad \textbf{Interests:} Listening to Music, Walking, Yoga}\\
 \end{tabularx}
 
 
