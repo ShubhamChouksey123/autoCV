@@ -223,9 +223,10 @@
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Led the full-stack development of the Signing and Verification API, building secure endpoints for key management and validation.
-        \item Designed and implemented a new organization-scoped secrets capability and enhanced GraphQL and REST APIs.
-        \item Automated the migration of New Relic alerts to a new policy using Terraform and implemented robust infrastructure with AWS (S3, KMS) and Cloudflare.
+        \item Architected and delivered a real-time Change Data Capture pipeline (Kafka, Apache Flink, PostgreSQL logical replication) enabling event-driven secret propagation to downstream consumers, leading the end-to-end DACI/design process across engineering, security, and infrastructure teams.
+        \item Designed and built a Signing and Verification platform from the ground up: RSA/EC key generation and rotation APIs, JWKS public-key distribution via AWS S3 and Cloudflare CDN, and full audit logging, with \textgreater90\% test coverage.
+        \item Maintained 100\% on-call availability with zero pager misses and zero Sev 1-3 incidents across 197 merged PRs over 18 months; eliminated a recurring connection-pool-exhaustion incident via credential-cache pre-warming and locking, and added SLOs and tracing to cut MTTR.
+        \item Reviewed 200+ pull requests ($\sim$45\% of the team's total, 2x target), mentoring engineers and raising the bar on code quality and observability practices.
     \end{itemize}
 \end{minipage}
 } 

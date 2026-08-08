@@ -1,10 +1,12 @@
-NAME=cv
+PERSON ?= shubham-chouksey
+NAME ?= cv
+BASE := people/$(PERSON)/$(NAME)
 
 all:
-	latexmk -pdf ${NAME}.tex
+	latexmk -pdf -cd $(BASE).tex
 
 clean:
-	rm -f ${NAME}.aux ${NAME}.bbl ${NAME}.bcf ${NAME}.fdb_latexmk ${NAME}.fls ${NAME}.log ${NAME}.out ${NAME}.run.xml ${NAME}.blg ${NAME}.toc *\~
+	rm -f $(BASE).aux $(BASE).bbl $(BASE).bcf $(BASE).fdb_latexmk $(BASE).fls $(BASE).log $(BASE).out $(BASE).run.xml $(BASE).blg $(BASE).toc people/$(PERSON)/*\~
 
 distclean: clean
-	rm -f ${NAME}.pdf
+	rm -f $(BASE).pdf

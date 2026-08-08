@@ -13,8 +13,12 @@
 *~
 
 # Compiled CV output (built from .tex via latexmk / CI; not committed to main)
-/cv.pdf
-/nikhlesh_cv.pdf
+people/*/*.pdf
+
+# Personal reference material (certificate scans, exported copies) - local only
+people/*/certificates/
 
 # macOS
 .DS_Store
+
+tmp.md
