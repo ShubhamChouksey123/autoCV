@@ -22,3 +22,4 @@ people/*/certificates/
 .DS_Store
 
 tmp.md
+mcp-connect.md

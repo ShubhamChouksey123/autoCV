@@ -216,38 +216,58 @@
 
 \customHeading{Work Experience}
 
-\customSubHeading{Software Engineer 2}
+\customSubHeading{\mbox{Senior Software Engineer}}
 {\href{https://www.newrelic.com/}{\raisebox{-0.05\height}\ New Relic} }
-{Hyderabad, India}{August 2024 - present} 
+{Hyderabad, India}{May 2026 - present}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Led the full-stack development of the Signing and Verification API, building secure endpoints for key management and validation.
-        \item Designed and implemented a new organization-scoped secrets capability and enhanced GraphQL and REST APIs.
-        \item Automated the migration of New Relic alerts to a new policy using Terraform and implemented robust infrastructure with AWS (S3, KMS) and Cloudflare.
+        \item Promoted to Senior Software Engineer in recognition of technical leadership, architecture ownership, and reliability engineering delivered as Software Engineer 2.
+        \item Continuing ownership of the Secrets Store platform (three-layered encryption, 30K RPM throughput, high availability/low latency design), with expanding scope toward cross-team architecture leadership.
     \end{itemize}
 \end{minipage}
-} 
+}
+\end{tabularx}
+
+
+\customSubHeading{Software Engineer 2}
+{\href{https://www.newrelic.com/}{\raisebox{-0.05\height}\ New Relic} }
+{Hyderabad, India}{August 2024 - May 2026}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Secrets Store platform:} Worked on New Relic's Secrets Store — the company-wide primitive for securely storing and managing the full lifecycle of customer and internal secrets — built for high availability and low latency, sustaining a throughput of 30K RPM. Contributed to its three-layered (envelope) encryption design, where a root master key encrypts client-level keys, client keys encrypt per-customer keys, and customer keys encrypt the secret values themselves, so that a database breach alone cannot expose plaintext secrets.
+        \item \textbf{Real-time secrets architecture:} Led the end-to-end design and delivery of a Change Data Capture (CDC) pipeline (Kafka, Apache Flink, PostgreSQL logical replication) enabling real-time secret event propagation to downstream consumers, driving the cross-team architecture/decision process from proposal to production.
+        \item \textbf{Signing \& Verification platform:} Designed and built a cryptographic signing/verification platform from scratch — RSA/EC key generation and rotation APIs, JWKS public-key distribution via AWS S3 + Cloudflare CDN, and full audit logging, with \textgreater90\% test coverage.
+        \item \textbf{Reliability \& on-call:} Maintained 100\% on-call availability with zero pager misses and zero Sev 1-3 incidents across 197 merged PRs (82.8\% merge rate) over 18 months; resolved a recurring connection-pool-exhaustion incident via credential-cache pre-warming and locking, and added SLOs/tracing to cut MTTR.
+        \item \textbf{Code review \& mentorship:} Completed 200+ code reviews ($\sim$45\% of the team's PRs, 2x target), mentoring engineers on security, architecture, and infrastructure decisions.
+        \item \textbf{Cross-team collaboration:} Worked across 25 repositories spanning the primary team, a partner API team, and shared infrastructure/security groups, with zero escalations/conflicts across all contributions.
+        \item \textbf{AI-assisted engineering:} Introduced configuration schema validation with IDE autocompletion and automated infrastructure-as-code planning as team-adopted practices; used AI tooling throughout day-to-day development, review, and documentation work.
+        \item \textbf{Documentation \& enablement:} Authored API usage guidelines, Postman collections, and integration-test docs adopted team-wide; onboarded and mentored new engineers.
+        \item Maintained 100\% compliance with security/policy requirements and completed all assigned trainings on schedule throughout the review period.
+    \end{itemize}
+\end{minipage}
+}
 \end{tabularx}
 
 
 \customSubHeading{Associate Team Lead}
 {\href{https://www.cognam.com/}{\raisebox{-0.05\height}\ Cognam} }
-{Delhi, India}{June 2023 - present} 
+{Delhi, India}{June 2023 - July 2024}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Led the design and development of the backend system for a blockchain app of Mexico's leading International payment processor, operating in 80 countries, driving monthly revenue of \$1 billion, using Java and Spring boot.
-        \item Led a 6-member back-end team, overseeing Sprint presentations, task allocation, deadline compliance in an agile and scrum setting, multi-tasking software development, and managing multiple stakeholders.
-        \item Maintained a monolithic repository, ensuring clean code through repository management, code reviews, and adherence to design principles.
-        Collaboration with front-end developers and ensuring seamless API integration.
-        \item Managed technical design, and documentation, crafted Jira user stories, streamlining development. Provided client consultation, optimizing deployment for accelerated timelines and enhanced satisfaction via software solutions.
-        \item Java, Spring boot, SQL, Scrum, Hibernate, Apacche Kafka, JPA, Hibernate, Git, Agile, Debugging, RESTful API
+        \item Led the design and development of the backend system for a blockchain app of Mexico's leading international payment processor, operating in 80 countries, driving monthly revenue of \$1 billion, using Java and Spring Boot.
+        \item Led a 6-member back-end team, overseeing sprint presentations, task allocation, deadline compliance in an agile and scrum setting, multi-tasking software development, and managing multiple stakeholders.
+        \item Maintained a monolithic repository, ensuring clean code through repository management, code reviews, and adherence to design principles; collaborated with front-end developers to ensure seamless API integration.
+        \item Managed technical design and documentation, crafted Jira user stories to streamline development, and provided client consultation, optimizing deployment for accelerated timelines and enhanced satisfaction.
+        \item \textbf{Technologies:} Java, Spring Boot, SQL, Scrum, Hibernate, Apache Kafka, JPA, Git, Agile, RESTful APIs.
     \end{itemize}
 \end{minipage}
-} 
+}
 \end{tabularx}
 
 
@@ -261,8 +281,8 @@
         \item Delivered 30+ scalable APIs for new enterprise mobile applications of bank's finance system, including user registration, login, profile updates, various send money, and notifications improving the user's experience.
         \item Designed and implemented a block-reader system that syncs database with blockchain up to 100,000 transactions per second, providing decentralized capabilities to traditional banking systems.
         \item Integrated multiple third-party systems with the product, including Twilio, SendGrid, Gmail SMTP, and S3.
-        \item Transformed the Issuer Server with machine learning, ML-powered automated user KYC, cutting manual work by 95\%, and boosting operational efficiency. 
-        \item Java, Spring, MVC, Maven, REST, MySQL, JDBC, AWS, Cloud, Mockito, testing, Test Driven Development, front-end
+        \item Transformed the Issuer Server with machine learning, ML-powered automated user KYC, cutting manual work by 95\%, and boosting operational efficiency.
+        \item \textbf{Technologies:} Java, Spring, MVC, Maven, REST, MySQL, JDBC, AWS, Mockito, TDD.
     \end{itemize}
 \end{minipage}
 }
@@ -300,9 +320,8 @@ Some More Skills  &  \normalsize{GCP, Microservices, Backend, Full-stack, Design
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item \textbf{Quiz Application:} Creator of a responsive quiz, daily facts, and news application showcasing frontend and backend proficiency with Java, Spring boot, JavaScript, PostgreSQL for database management, and Gmail SMTP for seamless communication.
-        Java, HTML, CSS, JS, React.js, PostgreSQL, Shell Script, HTML5, AWS, Docker
-        \hfill 
+        \item \textbf{Quiz Application:} Creator of a responsive quiz, daily facts, and news application showcasing frontend and backend proficiency, built with Java, Spring Boot, JavaScript, React.js, PostgreSQL, HTML5, AWS, and Docker, with Gmail SMTP for notifications.
+        \hfill
         \href{https://quiz-website-g8d7.onrender.com/}{Link to Website}
         \item \textbf{Clustering on Gene Expression Dataset:} Engineered 4 different clustering techniques from scratch on cancer gene expression dataset in Python. 
         \hfill 

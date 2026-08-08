@@ -216,20 +216,34 @@
 
 \customHeading{Work Experience}
 
-\customSubHeading{Software Engineer 2}
+\customSubHeading{\mbox{Senior Software Engineer}}
 {\href{https://www.newrelic.com/}{\raisebox{-0.05\height}\ New Relic} }
-{Hyderabad, India}{August 2024 - present} 
+{Hyderabad, India}{May 2026 - present}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Architected and delivered a real-time Change Data Capture pipeline (Kafka, Apache Flink, PostgreSQL logical replication) enabling event-driven secret propagation to downstream consumers, leading the end-to-end DACI/design process across engineering, security, and infrastructure teams.
-        \item Designed and built a Signing and Verification platform from the ground up: RSA/EC key generation and rotation APIs, JWKS public-key distribution via AWS S3 and Cloudflare CDN, and full audit logging, with \textgreater90\% test coverage.
-        \item Maintained 100\% on-call availability with zero pager misses and zero Sev 1-3 incidents across 197 merged PRs over 18 months; eliminated a recurring connection-pool-exhaustion incident via credential-cache pre-warming and locking, and added SLOs and tracing to cut MTTR.
-        \item Reviewed 200+ pull requests ($\sim$45\% of the team's total, 2x target), mentoring engineers and raising the bar on code quality and observability practices.
+        \item Promoted to Senior Software Engineer for technical leadership and reliability engineering; continuing to own the Secrets Store platform with expanding architecture scope.
     \end{itemize}
 \end{minipage}
-} 
+}
+\end{tabularx}
+
+
+\customSubHeading{Software Engineer 2}
+{\href{https://www.newrelic.com/}{\raisebox{-0.05\height}\ New Relic} }
+{Hyderabad, India}{August 2024 - May 2026}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Built and owned the Secrets Store platform (three-layered encryption, AWS KMS, 30K RPM throughput, high availability, low latency), exposing internal REST and customer-facing GraphQL APIs with a 99.99\% SLA, and led its real-time CDC pipeline (Kafka, Flink, PostgreSQL logical replication) for event-driven secret propagation to downstream consumers.
+        \item Designed a Signing and Verification platform from scratch: key generation/rotation APIs, JWKS distribution via AWS S3 and Cloudflare CDN, and audit logging, with \textgreater90\% test coverage; infra (DB, S3, KMS, alerts) provisioned via Terraform.
+        \item Maintained 100\% on-call availability and zero Sev 1-3 incidents across 197 merged PRs (82.8\% merge rate); resolved a recurring connection-pool-exhaustion incident.
+        \item Reviewed 200+ pull requests ($\sim$45\% of the team's total), mentoring engineers on code quality, architecture, and observability.
+    \end{itemize}
+\end{minipage}
+}
 \end{tabularx}
 
 
@@ -240,9 +254,8 @@
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Led the design and development of the backend system for a blockchain app that drives over \$1 billion in monthly revenue for a leading international payment processor.
-        \item Managed a 6-member back-end team, overseeing sprint presentations, task allocation, and stakeholder management in an agile and scrum setting.
-        \item Maintained a monolithic repository, ensuring clean code through reviews and adherence to design principles while collaborating with front-end developers.
+        \item Led design and development of a blockchain-based backend driving over \$1 billion in monthly revenue for a leading international payment processor.
+        \item Managed a 6-member back-end team — sprint planning, task allocation, and stakeholder management in an agile/scrum setup.
     \end{itemize}
 \end{minipage}
 } 
@@ -256,10 +269,9 @@
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Delivered 30+ scalable APIs for new enterprise mobile applications of bank's finance system, including user registration, login, profile updates, various send money, and notifications improving the user's experience.
-        \item Designed and implemented a block-reader system that syncs database with blockchain up to 100,000 transactions per second, providing decentralized capabilities to traditional banking systems.
-        \item Integrated multiple third-party systems with the product, including Twilio, SendGrid, Gmail SMTP, and S3.
-        \item Transformed the Issuer Server with machine learning, ML-powered automated user KYC, cutting manual work by 95\%, and boosting operational efficiency. 
+        \item Delivered 30+ scalable APIs for a bank's enterprise mobile app: registration, login, profile updates, money transfers, and notifications.
+        \item Built a block-reader system syncing a database with blockchain at up to 100,000 transactions/sec, adding decentralized capability to traditional banking systems.
+        \item Automated ML-powered KYC on the Issuer Server, cutting manual work by 95\%.
     \end{itemize}
 \end{minipage}
 }
@@ -281,10 +293,9 @@ Languages &  \normalsize{Java, C/C++, JavaScript, Python, SQL, Solidity}\\
 
 Frameworks  &  \normalsize{Spring, J2EE, Spring boot, Hibernate, JUnit, Unit Testing, jQuery, ReactJs, JPA}\\ 
 
-Technologies \& Tools  &  \normalsize{MySQL, MongoDB, Postgres, S3, Kafka, Bootstrap,
-Git, Amazon web services(AWS), Docker, Selenium, TDD,  Web Development, Linux, API Development, IntelliJ, NoSQL, Postman}\\  
+Technologies \& Tools  &  \normalsize{MySQL, MongoDB, Postgres, Kafka, Git, AWS, Terraform, Docker, Linux, RESTful APIs, GraphQL}\\
 
-Some More Skills  &  \normalsize{GCP, Microservices, Backend, Full-stack, Design patterns, Architecture, problem solving, CI/CD, Continuous Integration, Software Engineer, Bash, Distributed Systems, Software Developer}\\  
+Some More Skills  &  \normalsize{GCP, Microservices, Backend, Full-stack, Design patterns, System Design, Distributed Systems, High Availability, CI/CD, SRE, Bash}\\
 \end{tabularx}
 
 
@@ -300,11 +311,11 @@ Some More Skills  &  \normalsize{GCP, Microservices, Backend, Full-stack, Design
         \item \textbf{Quiz Application:} Developed a full-stack quiz app with Java and PostgreSQL backend for daily facts and news.
         \hfill 
         \href{https://quiz-website-g8d7.onrender.com/}{Link to Website}
-        \item \textbf{Clustering on Gene Expression Dataset:} Engineered 4 different clustering techniques from scratch on cancer gene expression dataset in Python. 
-        \hfill 
+        \item \textbf{Clustering on Gene Expression Dataset:} Built 4 clustering techniques from scratch on a cancer gene dataset in Python.
+        \hfill
         \href{https://github.com/ShubhamChouksey123/Hierarchical-Agglomerative-Clustering}{Link to GitHub }
-        \item \textbf{Terrace Farming Robot:} Designed, Analysis, Simulation, fabrication, and programmed a bronze medal-winning robot that can ascend, and descend stairs, and perform farming operations in hilly areas.
-        \hfill 
+        \item \textbf{Terrace Farming Robot:} Designed and built a bronze medal-winning robot for stair climbing and farming in hilly areas.
+        \hfill
         \href{https://github.com/ShubhamChouksey123/Terrace-Farming-Robot}{Link to GitHub}
     \end{itemize}
 } 
@@ -326,14 +337,11 @@ Relevant Coursework: & Computer science, Databases, Data Structures, ML, Algorit
 %----------------------------------------------------------------------------------------
 % \section{Awards Achievements}
 \customHeading{Awards \& Achievements}
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item Won Bronze Medal amongst 23 IITs in DIC’s Terrace Farming Challenge for hilly areas in Inter IIT Tech Meet.
-        \item Secured 2nd position in Stage-1 and overall 16th in National Level Robocon contest and 99/100 in Stage-1 in Robocon.
-        \item  Ranked amongst the top 0.68\% (amongst 1,400,000 candidates) in JEE Main 2017 and top 5.35\% (amongst 2,00,000 candidates) in JEE Advanced 2017.
-        \item  Open source contribution in web3j library for Java
-    \end{itemize}
-\end{minipage}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item Won Bronze Medal amongst 23 IITs in DIC’s Terrace Farming Challenge for hilly areas in Inter IIT Tech Meet.
+    \item Secured 2nd position in Stage-1 and overall 16th in National Level Robocon contest and 99/100 in Stage-1 in Robocon.
+    \item  Ranked top 0.68\% in JEE Main 2017 and top 5.35\% in JEE Advanced 2017; open source contributor to web3j (Java).
+\end{itemize}
 
 
 

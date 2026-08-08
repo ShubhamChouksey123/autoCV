@@ -12,6 +12,12 @@ A LaTeX resume repo based on the [autoCV](https://github.com/jitinnair1/autoCV) 
 
 All CV files share the same preamble/macro structure (see Architecture below) — when adding a new person's CV, create `people/<new-person>/cv.tex` by copying an existing file rather than starting from the template preamble.
 
+Each person directory also has an `info.md` (e.g. `people/shubham-chouksey/info.md`) — check it before editing that person's CV. For Shubham it holds: contact info/links, a "Work Experience" section kept **in sync with `cv.tex`'s trimmed bullets** (update both together when either changes), and a "Keyword shortlist for cv.tex" checklist (ATS/recruiter keywords, `[x]` = already present in `cv.tex`, `[ ]` = candidate) used to track and vet resume keyword additions against product-company screening — don't add a keyword there or to the CV that isn't actually backed by real experience.
+
+`tmp.md` (repo root, gitignored) is the user's scratch pad for ad hoc instructions/facts pasted in before being turned into a request — not part of the documented repo state, just ephemeral working notes.
+
+`mcp-connect.md` (repo root) has working Cloud ID / connection details for the New Relic Confluence MCP tools, used to research facts (e.g. internal architecture docs) when writing CV content — read it if a Confluence tool call fails with a cloud-ID or permission error.
+
 ## Commands
 
 The `Makefile` builds `people/$(PERSON)/$(NAME).tex`, defaulting to `PERSON=shubham-chouksey NAME=cv`:
@@ -22,7 +28,16 @@ The `Makefile` builds `people/$(PERSON)/$(NAME).tex`, defaulting to `PERSON=shub
 - `make clean` — remove intermediate build artifacts (`.aux`, `.bbl`, `.log`, etc.) for the selected `PERSON`/`NAME`.
 - `make distclean` — `clean` plus removing the compiled PDF.
 
-There are no tests or linters. Validate changes by compiling and visually inspecting the PDF.
+There are no tests or linters. Validate changes by compiling and visually inspecting the PDF — since there's no way to view a rendered PDF directly in this environment, use `pdftotext -layout <pdf> -` to sanity-check content/ordering and `pdftoppm -png -r 150 <pdf> /tmp/preview` (both from the `poppler` package; `brew install poppler` if missing) then read the resulting PNG(s) to visually verify layout. This is also how to check page count (`pdftotext`'s sibling tool `pdfinfo`, or just count generated `-N.png` files) and check for text-wrapping/overflow.
+
+If `pdflatex`/`latexmk` errors on a missing package (e.g. `biblatex.sty`, `logreq.sty`), install it into the user tree without sudo: `tlmgr init-usertree` once, then `tlmgr --usermode install <package>`. The `biber` binary (biblatex's backend, needed at compile time even though no CV actually renders a bibliography) can't go in a user TeX tree since it's a compiled binary, not a package — install it via `brew install biber` instead.
+
+## Design constraint: `cv.tex` must stay exactly 1 page
+
+`cv.tex` (Shubham's default/CI-published resume) is deliberately kept to a single page; `cv-long.tex` is where in-depth/verbose content belongs instead. When editing `cv.tex`, after any content addition, verify page count stays at 1 (see the `pdftotext`/`pdftoppm` workflow above) and trim if it overflows. Things learned the hard way while doing this:
+- **A `\begin{minipage}`-wrapped block cannot split across a page break** — if content overflows by even one line, the *entire* minipage jumps to page 2, not just the overflowing part. The Awards & Achievements section used to be wrapped in a superfluous minipage for exactly this reason and was fixed by removing it (it's not part of a multi-column layout, so it doesn't need one) so its `itemize` can flow/break normally. Only wrap Work Experience bullets in a minipage where the existing per-role pattern already does so.
+- A `\customSubHeading` title longer than the other three columns (e.g. "Senior Software Engineer") can wrap to two lines because the four columns are equal-width `X` columns. Force it onto one line with `\customSubHeading{\mbox{Title}}` rather than reworking the column widths.
+- When trimming to reclaim a line: shortening prose only helps if it actually reduces the *line count* of that paragraph — a `\hfill`-separated link (as in Projects) often still wraps to the same number of lines even after shortening the body text, because the link needs its own line regardless. Check the rendered output, not just the source diff.
 
 ## Architecture
 
