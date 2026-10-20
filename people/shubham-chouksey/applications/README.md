@@ -8,6 +8,8 @@ Status of job applications prepared via the `job-skill`. Each row links to the c
 | [GitLab](./GitLab-SeniorBackend/) | Senior Backend Engineer, India | 8716143002 | [Link](https://boards.greenhouse.io/gitlab/jobs/8716143002) | Applied |
 | [Salesforce](./Salesforce-SMTSSecrets/) | Software Engineering SMTS (Backend - Distributed Systems) | JR347341 | Closed/filled — confirmed "0 jobs found" on [Salesforce Workday career site](https://salesforce.wd12.myworkdayjobs.com/External_Career_Site) as of 2026-10-20 | Not applied (role closed) |
 | [Atlassian](./Atlassian-SeniorBackend/) | Senior Backend Software Engineer | N/A | [Link](https://www.atlassian.com/company/careers/detail/8cfe39eb-c6e7-4e3f-b735-cf632c3b3b8d) | Not applied |
-| [Google](./Google-SSECloud/) | Senior Software Engineer, Google Cloud | N/A (Google doesn't show req IDs) | [Link](https://www.google.com/about/careers/applications/jobs/results/141387972648805062) | Materials ready — BLOCKED: hit Google's 3-applications-in-30-days limit, cannot submit yet |
+| [Google](./Google-SSECloud/) | Senior Software Engineer, Google Cloud | N/A (Google doesn't show req IDs) | [Link](https://www.google.com/about/careers/applications/jobs/results/141387972648805062) | Materials ready — BLOCKED: hit Google's 3-applications-in-30-days limit, cooling period for October 2026, cannot submit until it clears |
+| [CrowdStrike](./CrowdStrike-EngineerIIICloud/) | Engineer III - Cloud (Falcon Fusion) | R30128 | [Link](https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers/job/India---Pune/Engineer-III---Cloud_R30128) | Applied |
 
 **Status values:** Not applied → Applied → Acknowledged → Online Assessment → Interview → Offer → Rejected → Ghosted
+

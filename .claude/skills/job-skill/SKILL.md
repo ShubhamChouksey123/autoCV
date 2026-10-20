@@ -37,6 +37,35 @@ At the start of any `/job-skill` command, read `info.md` (and `cv.tex`/`cv-long.
 
 Resume/profile collection is skipped (see above). All of the above preferences — including salary, target companies, and visa needs — are already established. Do not re-ask any of them via AskUserQuestion; go straight to the requested command.
 
+### Priority company career sites (check these directly, not just search results)
+
+Web search results for a specific job posting often go stale (req filled/removed) or point to a dead URL while the role has actually moved elsewhere on the same site — this happened with a Salesforce JR347341 link that 404'd on salesforce.com while the req was simply gone from Salesforce's real ATS. When searching or re-verifying a listing for a priority company, check its actual careers/ATS site directly rather than trusting a search engine result alone:
+
+| Company | Careers / ATS site |
+|---|---|
+| Google | https://careers.google.com |
+| Salesforce | https://salesforce.wd12.myworkdayjobs.com/External_Career_Site (Workday — salesforce.com/careers/jobs/... links go stale even for open reqs) |
+| Apple | https://jobs.apple.com |
+| PayPal | https://careers.pypl.com (Workday-backed; verify via this domain, not aggregator mirrors) |
+| Nvidia | https://jobs.nvidia.com |
+| ServiceNow | https://careers.servicenow.com |
+| Airbnb | https://careers.airbnb.com |
+| Atlassian | https://www.atlassian.com/company/careers/all-jobs |
+| LinkedIn | https://careers.linkedin.com |
+| Databricks | https://www.databricks.com/company/careers |
+| Confluent | https://careers.confluent.io (not on Greenhouse — `boards.greenhouse.io/confluent` 404s; also blocks automated fetches with a Vercel bot-protection checkpoint) |
+| GitLab | https://job-boards.greenhouse.io/gitlab (Greenhouse) |
+| Slack | https://slack.com/careers |
+| CrowdStrike | https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers (Workday — not on Greenhouse, `boards.greenhouse.io/crowdstrike` and `crowdstrike.com/en-us/careers/open-positions/` both 404) |
+| BrowserStack | https://www.browserstack.com/careers |
+| Okta | https://www.okta.com/company/careers/job-listing/ (the old `boards.greenhouse.io/okta` now just redirects to Okta's marketing careers page, not a real job board) |
+| Twilio | https://job-boards.greenhouse.io/twilio (Greenhouse — JS-paginated past page 1; India/Engineering roles may be on page 2-3, not reachable via direct URL fetch) |
+| Uber | https://www.uber.com/careers/ (also jobs.uber.com) |
+| Cisco | https://careers.cisco.com |
+| Meta | https://www.metacareers.com |
+
+This list is current as of 2026-10-20 (ATS platforms change over time — if a link above 404s, that's itself useful signal the company migrated systems, not proof no roles exist).
+
 ## Commands
 
 ### `/job-skill help`
@@ -246,7 +275,14 @@ This repo (`/Users/schouksey/Documents/personal-projects/autoCV`) already has a 
 2. Drop any link returning 404, 403, "job not found", or "position filled"
 3. If direct link unavailable but job is real, provide careers page + exact job title + Job ID
 4. Never show a link you haven't verified this session
-5. Flag postings older than 30 days as "⚠️ Possibly expired — verify before applying"
+5. **Hard filter — only include postings posted within the last 14 days.** This is a qualifying filter, not just a ranking preference: check the posting date on the job page itself (e.g. "Posted X days ago", "Posted on [date]") and exclude anything older than 14 days from results/application candidates, even if the link still loads and the role is otherwise a strong match. If the posting date genuinely isn't shown anywhere on the page, flag it as "posting date unverified — confirm freshness before applying" rather than assuming it passes.
+
+#### Per-company application rate limits (CRITICAL — check before assuming materials are submittable)
+
+Some companies cap how many applications a candidate can submit to them in a rolling window, independent of role matching. **Google enforces a limit of 3 applications per 30-day window** — confirmed in practice on 2026-10-20 when attempting to submit hit this limit. When preparing materials for a company known to have such a cap:
+- Note the limit and the user's recent application count/dates for that company in the application's `README.md`.
+- If the limit is already reached, mark status as "Materials ready — BLOCKED: rate limit" rather than "Not applied," so it's clear the delay is structural, not a to-do.
+- Don't assume other companies lack similar limits just because none is documented yet — if a submission attempt reports a limit, record it here for next time.
 
 ---
 
