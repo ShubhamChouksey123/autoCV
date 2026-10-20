@@ -18,8 +18,10 @@ people/*/*.pdf
 # Personal reference material (certificate scans, exported copies) - local only
 people/*/certificates/
 
-# Per-job application materials from the job-skill (scratch output, not committed)
-people/*/applications/
+# Per-job application materials from the job-skill (scratch output, not committed) —
+# except the top-level tracker README, which is tracked
+people/*/applications/*
+!people/*/applications/README.md
 
 # macOS
 .DS_Store
