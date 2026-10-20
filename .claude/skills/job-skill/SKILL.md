@@ -203,10 +203,10 @@ Then present results in this table:
 ```
 [Name]_Applications_[Date].zip
 ├── Google_Bangalore/
-│   ├── [Name]_Resume_Google_SDE2.docx
+│   ├── [Name]_Resume_Google_SDE2.pdf
 │   └── [Name]_CoverLetter_Google.docx
 ├── Razorpay_Bangalore/
-│   ├── [Name]_Resume_Razorpay_Backend.docx
+│   ├── [Name]_Resume_Razorpay_Backend.pdf
 │   └── [Name]_CoverLetter_Razorpay.docx
 └── ...
 ```
@@ -215,31 +215,30 @@ Then present results in this table:
 
 For EVERY job in the results (not just top ones):
 
-**Resume generation:**
-1. Take the user's base resume content from `people/shubham-chouksey/info.md` (and `cv.tex`/`cv-long.tex` for exact current phrasing)
-2. Reformat for the target market:
-   - **India**: 2-3 pages, all degrees with CGPA/percentage, GATE score if applicable, technical skills prominent, Naukri-compatible (no tables/columns/graphics that break ATS parsers)
-   - **Abroad**: Country-specific format (see Resume Formatting section)
-3. Tailor to THIS specific job description:
+**Resume generation — use the repo's existing LaTeX build pipeline, do not generate a DOCX resume:**
+
+This repo (`/Users/schouksey/Documents/personal-projects/autoCV`) already has a working LaTeX → PDF pipeline for Shubham's resume (see the repo's `CLAUDE.md` for full detail). Reuse it instead of building a resume from scratch:
+
+1. Start from `people/shubham-chouksey/cv.tex` (1-page, default) or `cv-long.tex` (expanded) — whichever base fits the role better (prefer `cv.tex` unless the JD calls for more depth that only `cv-long.tex` covers).
+2. Copy it to a job-specific file in the same directory, e.g. `people/shubham-chouksey/cv-google-sde2.tex` (one file per application; don't overwrite `cv.tex`/`cv-long.tex` themselves).
+3. Tailor the copy to THIS specific job description, editing only content (bullets, Skills section ordering/keywords) — never touch the shared preamble or macros (`\customHeading`, `\customSubHeading`, etc.):
    - Mirror exact phrases and keywords from the JD (not synonyms)
    - Reorder bullet points so the most relevant experience comes first
-   - Add a "Summary" line that directly addresses this role
-   - If JD mentions a tool the user has used but didn't list, add it
-4. Run ATS keyword check — must score >= 70%:
-   - If below 70%: rewrite, add missing keywords naturally, re-score
-   - Show final score in the results table
-5. Generate as DOCX using the docx skill
-6. Name: `[Name]_Resume_[Company]_[RoleShort].docx`
+   - If the JD mentions a tool/skill the user actually has (check `info.md`'s keyword shortlist — only `[x]` items) but it isn't in the current CV text, add it
+   - **Never lie on the resume.** If the JD requires a skill the user doesn't have, don't add it — note it as a gap in the Fitness explanation instead.
+4. Run ATS keyword check — must score >= 70% (see ATS Keyword Optimization below); if below, revise the tailored `.tex` content and re-score.
+5. Build the PDF: `make PERSON=shubham-chouksey NAME=cv-google-sde2` (substitute the actual filename). This runs `latexmk -pdf` per the Makefile.
+6. **Verify it, don't just trust the build**: if based on `cv.tex`, confirm it's still exactly 1 page (`pdfinfo` or count `pdftoppm -png -r 150` pages); if it overflows, trim per the page-overflow guidance in the repo's `CLAUDE.md` (e.g. the minipage page-break pitfall) rather than shipping a 2-page file from a 1-page template. Spot-check text/ordering with `pdftotext -layout`.
+7. The output PDF (`people/shubham-chouksey/cv-google-sde2.pdf`) is the deliverable — rename/copy it to `[Name]_Resume_[Company]_[RoleShort].pdf` for the zip bundle.
+8. Clean up build artifacts (`make clean` equivalent for that NAME) once the PDF is extracted; the job-specific `.tex`/`.pdf` files are scratch output for this application round, not meant to be committed back to the repo unless the user asks.
 
-**Cover letter generation:**
+**Cover letter generation (still generated fresh — no existing pipeline for this):**
 1. Mirror 3-5 keywords from the JD
 2. Opening: Why this specific company (brief web research on recent company news/achievements)
 3. Middle: Map 2-3 of the user's achievements directly to job requirements
 4. Closing: Enthusiasm + availability (notice period, relocation readiness if applicable)
 5. Under 300 words
 6. Name: `[Name]_CoverLetter_[Company].docx`
-
-**Never lie on the resume.** If the JD requires a skill the user doesn't have, don't add it. Note it as a gap in the match explanation.
 
 #### Link Quality Rules (CRITICAL)
 
@@ -361,26 +360,24 @@ Set up a nightly automated job search. Walk the user through:
 
 ## Resume Formatting
 
-**For India (default):**
-- 2-3 pages
-- Photo optional (don't include unless user wants to)
-- Include all degrees with marks/CGPA/percentage
-- GATE score if applicable
-- Technical Skills section near the top — list everything
-- Current CTC and Expected CTC (if user chooses to include)
-- Notice period
-- Projects section if user is < 3 years experience
-- No fancy formatting — must pass Naukri/ATS parsers (no tables, columns, graphics)
+Resumes are produced via the repo's existing LaTeX/Makefile pipeline (see "How Resume + Cover Letter Are Generated Per Job" above), not generated as DOCX from scratch. The formatting constraints below describe what to preserve/adjust when tailoring the `.tex` content per job — they are not a from-scratch template.
 
-**For abroad (if user is looking internationally):**
-- **USA/Canada**: 1 page max. ATS-optimized. Mirror exact JD phrases. No photo, no personal details.
-- **Germany**: Include photo, DOB, nationality. Mention EU Blue Card eligibility.
-- **UK**: 2 pages max. "Personal Statement" header. British English.
-- **UAE/Gulf**: 2-3 pages. Include photo, nationality, visa status.
-- **Australia**: No photo. Lead with "Key Achievements". 2-3 pages.
-- **Netherlands**: No photo. Mention 30% ruling eligibility.
+**For India (default — based on `cv.tex`):**
+- Stays exactly 1 page — this is a hard constraint on `cv.tex`'s structure (see repo `CLAUDE.md`); trim content rather than letting it overflow to page 2
+- No photo
+- Technical Skills section stays prominent near the top
+- No fancy formatting beyond what the template already has — the existing LaTeX template is already ATS-safe (no tables/columns/graphics that break parsers)
+- If more depth is genuinely needed for a role, base the tailored copy on `cv-long.tex` instead (expanded variant, same structure, not page-constrained) rather than fighting the 1-page limit
 
-Generate as DOCX using the docx skill. Name: `[Name]_Resume_[Company]_[RoleShort].docx`
+**For abroad (if the user is looking internationally)** — same `.tex`-based pipeline, adjust content within it rather than switching tools:
+- **USA/Canada**: Keep to 1 page (base off `cv.tex`). Mirror exact JD phrases. No photo, no personal details.
+- **Germany**: Mention EU Blue Card eligibility in a bullet; no photo/DOB fields exist in the template — don't add them unless asked.
+- **UK**: British English spelling in tailored bullets; `cv-long.tex` base is fine if 2 pages is acceptable.
+- **UAE/Gulf**: `cv-long.tex` base acceptable (2-3 pages); mention visa status in a bullet if relevant.
+- **Australia**: Lead Skills/top bullets with key achievements; `cv-long.tex` base if more than 1 page is acceptable.
+- **Netherlands**: Mention 30% ruling eligibility in a bullet if relevant.
+
+Build with `make PERSON=shubham-chouksey NAME=<job-specific-file>`, verify page count/overflow, then export the PDF. Name the deliverable `[Name]_Resume_[Company]_[RoleShort].pdf`.
 
 ### Human-Written Tone (CRITICAL — applies to every resume and cover letter)
 
@@ -423,7 +420,7 @@ Always zip resume + cover letter per application:
 ```
 [Name]_Applications_[Date].zip
 ├── [Company1]_[City]/
-│   ├── [Name]_Resume_[Company1]_[Role].docx
+│   ├── [Name]_Resume_[Company1]_[Role].pdf
 │   └── [Name]_CoverLetter_[Company1].docx
 ├── [Company2]_[City]/
 │   ├── ...
