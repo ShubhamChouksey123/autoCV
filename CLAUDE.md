@@ -18,6 +18,20 @@ Each person directory also has an `info.md` (e.g. `people/shubham-chouksey/info.
 
 `mcp-connect.md` (repo root) has working Cloud ID / connection details for the New Relic Confluence MCP tools, used to research facts (e.g. internal architecture docs) when writing CV content — read it if a Confluence tool call fails with a cloud-ID or permission error.
 
+## Job search assistant (`.claude/skills/job-skill/`)
+
+`.claude/skills/job-skill/SKILL.md` is a local, customized copy of a third-party Claude Code skill (originally [mayankjoshii/claude-job-skill](https://github.com/mayankjoshii/claude-job-skill)), adapted specifically for Shubham Chouksey: it points at `people/shubham-chouksey/info.md`/`cv.tex`/`cv-long.tex` as the resume source of truth instead of asking for an upload, bakes in his job preferences (role types, remote-first India preference, 50+ LPA comp filter for 5+ YOE, target companies, visa needs), and strips an embedded third-party ad that was present in the original. It never auto-submits applications (no logins/CAPTCHAs/form-filling) — it only searches, scores, and prepares materials; the user applies manually.
+
+Tailored resumes/cover letters it produces go under `people/shubham-chouksey/applications/[Company]-[RoleShort]/`, one directory per application:
+```
+people/shubham-chouksey/applications/[Company]-[RoleShort]/
+├── README.md       (job title, company, Job ID, apply link, Fitness Score — a few lines)
+├── resume.tex       (tailored LaTeX source, built via the Makefile — see below)
+├── resume.pdf        (gitignored like other PDFs in this repo)
+└── cover-letter.md
+```
+These directories are scratch output for a given job-search round — not meant to be committed unless the user explicitly asks. The Makefile only builds `people/$(PERSON)/$(NAME).tex` directly, so building a tailored resume means building it as a flat file under `people/shubham-chouksey/` first (e.g. `make PERSON=shubham-chouksey NAME=google-sde2`), then moving the `.tex`/`.pdf` into the application directory as `resume.tex`/`resume.pdf` and cleaning up build artifacts.
+
 ## Commands
 
 The `Makefile` builds `people/$(PERSON)/$(NAME).tex`, defaulting to `PERSON=shubham-chouksey NAME=cv`:

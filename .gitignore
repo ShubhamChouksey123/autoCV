@@ -18,6 +18,9 @@ people/*/*.pdf
 # Personal reference material (certificate scans, exported copies) - local only
 people/*/certificates/
 
+# Per-job application materials from the job-skill (scratch output, not committed)
+people/*/applications/
+
 # macOS
 .DS_Store
 

@@ -24,7 +24,7 @@ At the start of any `/job-skill` command, read `info.md` (and `cv.tex`/`cv-long.
 
 ## Job Preferences (known — do not ask again unless he says otherwise)
 
-- **Target role types**: Backend Engineer, Senior Software Engineer, Full Stack, Member of Technical Staff (MTS), Senior Member of Technical Staff (SMTS)
+- **Target role types**: Backend Engineer, Senior Software Engineer, Software Engineer, Software Developer, Full Stack, Member of Technical Staff (MTS), Senior Member of Technical Staff (SMTS)
 - **Target location**: Remote-First / Fully Remote in India preferred — this is the top preference; Hyderabad, Bangalore, Delhi, Gurugram, Noida, Pune, and other Indian cities are acceptable fallbacks, not the default
 - **Company type preference**: Any, but Product-based companies are the top priority
 - **Seniority level**: Senior — 5 years 5 months of experience (update this figure over time rather than re-deriving it each session)
