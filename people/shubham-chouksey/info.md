@@ -14,15 +14,17 @@ This matches the trimmed bullets in `cv.tex` (kept in sync — update both toget
 ### Senior Software Engineer — New Relic (May 2026 - present)
 
 - Promoted to Senior Software Engineer for technical leadership and reliability engineering; continuing to own the Secrets Store platform with expanding architecture scope.
+- Designed a multi-agent Spec-Driven Development (SDD) workflow with Claude Code (research agent, planning step, dev/test agents, and an automated spec-drift review step), now standardized team-wide, driving a ~20% productivity gain.
 
 ### Software Engineer 2 — New Relic (August 2024 - May 2026)
 
-- Built and owned the Secrets Store platform (three-layered encryption, 30K RPM throughput, high availability, low latency) and led its real-time CDC pipeline (Kafka, Flink, PostgreSQL logical replication) for event-driven secret propagation to downstream consumers.
-- Built internal REST APIs and customer-facing GraphQL APIs for the Secrets Store, holding a 99.99% SLA across availability, latency, and error rate.
+- Built and owned the Secrets Store platform (three-layered encryption, 30K RPM throughput, high availability, low latency).
+- Built an internal REST API and a customer-facing GraphQL API for the Secrets Store, holding a 99.99% SLA across availability, latency, and error rate.
 - Designed a Signing and Verification platform from scratch: key generation/rotation APIs, JWKS distribution via AWS S3 and Cloudflare CDN, and audit logging, with >90% test coverage.
 - Built and maintained most of the Secrets Store infrastructure as Terraform-managed IaC — database, S3 buckets, AWS KMS keys, and New Relic alerts/service levels.
 - Maintained 100% on-call availability and zero Sev 1-3 incidents across 197 merged PRs (82.8% merge rate); resolved a recurring connection-pool-exhaustion incident.
-- Reviewed 200+ pull requests (~45% of the team's total), mentoring engineers on code quality, architecture, and observability.
+- Performed 200+ code reviews (~45% of the team's total pull requests), mentoring engineers on code quality, architecture, and observability.
+- Used AI-assisted tools throughout day-to-day development, code review, and documentation work.
 
 ### Associate Team Lead — Cognam (June 2023 - July 2024)
 
@@ -51,7 +53,7 @@ Candidate keywords for the Skills section (and, where relevant, Work Experience 
 - [x] SQL
 - [x] C/C++
 - [ ] TypeScript
-- [ ] Go
+- [x] Go — less than 6 months hands-on experience at Cognam (not primary language)
 - [ ] Kotlin
 
 ### System design & architecture
@@ -130,9 +132,16 @@ Candidate keywords for the Skills section (and, where relevant, Work Experience 
 ### Practices & collaboration
 - [x] Agile / Scrum — "agile/scrum" in Cognam Work Experience bullet
 - [ ] Technical Design Docs / RFCs
-- [x] Code Review — "Reviewed 200+ pull requests" in Work Experience bullet
+- [x] Code Review — literal phrase in Work Experience bullet ("Performed 200+ code reviews...")
 - [x] Mentorship — "mentoring engineers" in Work Experience bullet
+- [x] AI-Assisted Development / AI Tools — in Skills ("Some More Skills") and Work Experience bullet
+- [x] Claude Code — "with Claude Code" in the new multi-agent SDD Work Experience bullet
+- [x] Spec-Driven Development (SDD) / Multi-Agent Workflows — same bullet
 - [ ] Cross-functional Collaboration
+
+### Keyword form variants (deliberate — same concept, different surface form, to hedge against exact-match ATS parsers)
+- [x] "API" (singular) — "an internal REST API and a customer-facing GraphQL API" in Work Experience; "API Design" in Skills
+- [x] "APIs" (plural) — "key generation/rotation APIs" (Work Experience), "scalable APIs" (Cognam bullet), "RESTful APIs" (Skills)
 
 ## Notes
 

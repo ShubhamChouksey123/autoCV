@@ -28,9 +28,12 @@ people/shubham-chouksey/applications/[Company]-[RoleShort]/
 ├── README.md       (job title, company, Job ID, apply link, Fitness Score — a few lines)
 ├── resume.tex       (tailored LaTeX source, built via the Makefile — see below)
 ├── resume.pdf        (gitignored like other PDFs in this repo)
-└── cover-letter.md
+├── cover-letter.md   (editable source of truth)
+└── cover-letter.pdf  (always generated alongside the .md — see below)
 ```
 These directories are scratch output for a given job-search round — not meant to be committed unless the user explicitly asks. The Makefile only builds `people/$(PERSON)/$(NAME).tex` directly, so building a tailored resume means building it as a flat file under `people/shubham-chouksey/` first (e.g. `make PERSON=shubham-chouksey NAME=google-sde2`), then moving the `.tex`/`.pdf` into the application directory as `resume.tex`/`resume.pdf` and cleaning up build artifacts.
+
+Cover letters are drafted as plain-prose `cover-letter.md`, then always rendered to `cover-letter.pdf` (the actual deliverable) via `.claude/skills/job-skill/scripts/cover_letter_to_pdf.py`, which uses the repo's existing `pdflatex` toolchain rather than a new dependency (pandoc, etc.). Both files are kept.
 
 ## Commands
 

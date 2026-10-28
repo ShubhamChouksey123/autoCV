@@ -267,7 +267,8 @@ This repo (`/Users/schouksey/Documents/personal-projects/autoCV`) already has a 
 3. Middle: Map 2-3 of the user's achievements directly to job requirements
 4. Closing: Enthusiasm + availability (notice period, relocation readiness if applicable)
 5. Under 300 words
-6. Name: `[Name]_CoverLetter_[Company].docx`
+6. Save as `cover-letter.md` (plain prose, paragraphs separated by blank lines) in the application's directory — this is the editable source of truth.
+7. **Always also generate `cover-letter.pdf` from it** — the deliverable the user actually sends. Convert with the repo's existing LaTeX toolchain (no new dependency like pandoc needed): `python3 .claude/skills/job-skill/scripts/cover_letter_to_pdf.py <dir>/cover-letter.md <dir>/cover-letter.pdf`. Verify it's 1 page (`pdfinfo <dir>/cover-letter.pdf | grep Pages`) and spot-check text with `pdftotext -layout`. Keep both files — `cover-letter.md` is never deleted once the PDF exists.
 
 #### Link Quality Rules (CRITICAL)
 
